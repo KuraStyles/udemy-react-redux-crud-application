@@ -29,7 +29,7 @@ class EventsNew extends Component {
 		this.props.history.push("/");
 	}
 	render() {
-		const { handleSubmit, pristine, submitting } = this.props;
+		const { handleSubmit, pristine, submitting, invalid } = this.props;
 
 		return (
 			<form onSubmit={handleSubmit(this.onSubmit)}>
@@ -53,7 +53,7 @@ class EventsNew extends Component {
 					<input
 						type="submit"
 						value="Submit"
-						disabled={pristine || submitting}
+						disabled={pristine || submitting || invalid}
 					/>
 					<Link to="/">Cancel</Link>
 				</div>
